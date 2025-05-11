@@ -1,0 +1,55 @@
+@use "./variable/" as *;
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(3deg);
+  }
+
+  50% {
+    transform: rotate(-3deg);
+  }
+
+  75% {
+    transform: rotate(1deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes storm {
+  0% {
+    transform: translate3d(0, 0, 0) translateZ(0);
+  }
+
+  25% {
+    transform: translate3d(4px, 0, 0) translateZ(0);
+  }
+
+  50% {
+    transform: translate3d(-3px, 0, 0) translateZ(0);
+  }
+
+  75% {
+    transform: translate3d(2px, 0, 0) translateZ(0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0) translateZ(0);
+  }
+}
+
+@keyframes fade-b {
+  from {
+    background-color: $alpha;
+  }
+
+  to {
+    background-color: $alpha-b30;
+  }
+}

@@ -1,0 +1,44 @@
+@use"../variable" as *;
+
+// 混用mixin需調用
+// rwd樣式不同 不可使用繼承
+@mixin title-l {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: $font-size-xxl;
+    font-weight: $border;
+}
+
+@mixin title-m {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: $font-size-l;
+    font-weight: $bold;
+}
+
+@mixin title-s {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: $font-size-m;
+    font-weight:$bold;
+}
+
+@mixin title-item{
+    
+}
+
+@mixin bordered($color:$color-deep, $width:1px) {
+    border: $width solid $color;
+}
+
+@mixin bg($img, $attachment: scroll, $color: $color-lesser3, $repeat: no-repeat) {
+    background: $img $attachment $color $repeat center;
+}
+
+@mixin glassmorphism {
+    background-color: $alpha-w20;
+    backdrop-filter: blur(25px);
+    // filter: drop-shadow(5px 5px 5px rgba(0,0,0,.3)); 套在所有元素上
+    box-shadow: 2px 2px 2px $alpha-b15,
+        inset 2px 2px 5px $alpha-w40;
+        border: 2px solid $alpha-w50;
+        border-radius: $radius-ex;
+}
+
