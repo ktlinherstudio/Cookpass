@@ -1,0 +1,19 @@
+//字型
+$font-title: 'Noto Sans TC', sans-serif;
+$font-en: 'Playball', cursive;
+//全站預設body
+body {
+  font-family: $font-title;
+  font-size: $font-size-m;
+  color: $color-black;
+  background-color: $color-bg1;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+a {
+  display: inline-block;
+}
