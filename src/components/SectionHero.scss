@@ -1,3 +1,6 @@
+@use '../styles/variables' as *;
+
+// SectionHero.scss
 .section-hero {
   position: relative;
   width: 100%;
@@ -14,87 +17,170 @@
     z-index: 0;
   }
 
-  .hero-logo-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 280px;
-    max-width: 80vw;
+  .hero-logo-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    flex-direction: column;
     z-index: 2;
+  }
+
+  .hero-logo-container {
+    position: relative;
+    width: 550px;
+    max-width: 80vw;
+    height: auto;
+    transform: translateY(-36px);
 
     img {
       width: 100%;
-      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 1s ease;
     }
 
-    .slide-spatula {
-      animation: spatulaSlide 1s ease forwards;
+    .fade-in {
+      opacity: 1;
+      animation: fadeIn 1s ease forwards;
     }
 
-    .fadein-text {
+    .fade-out {
+      animation: fadeOut 2s ease forwards;
+    }
+
+    .spatula {
+      animation-delay: 0s;
+      z-index: 1;
+    }
+
+    .fade-in-text {
       animation: fadeText 1.2s ease forwards;
+      z-index: 2;
     }
   }
+
+  .hero-slogan {
+    min-height: 30px;
+    font-size: $font-size-m;
+    letter-spacing: $space-s;
+    color: #fff;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 2s ease;
+    margin-top: 190px;
+
+    &.show {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+  .hero-slogan {
+    font-size: $font-size-s;
+    letter-spacing: $space-xs;
+    margin-top: 80px;
+    white-space: normal;
+    max-width: 240px;
+    line-height: 2;
+  }
+}
+
 
   .scroll-hint {
     position: absolute;
-    bottom: 40px;
+    bottom: 15%;
     left: 50%;
     transform: translateX(-50%);
-    text-align: center;
+    width: 160px;
     z-index: 2;
-    color: white;
-    font-size: 0.9rem;
     opacity: 0;
-    animation: fadeIn 1s ease 3s forwards;
+    animation: fadeInHint 1s ease forwards;
+    animation-delay: 5s;
 
-    .arrow-down {
-      width: 20px;
-      height: 20px;
-      border-bottom: 2px solid white;
-      border-right: 2px solid white;
-      transform: rotate(45deg);
-      margin: 0 auto 6px;
-      animation: bounce 1.5s infinite;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
+      opacity: 0;
+      visibility: hidden;
     }
-  }
-}
 
-/* 動畫區塊 */
-@keyframes spatulaSlide {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+    .scroll-1 {
+      animation: showHint1 1.2s infinite steps(2, end);
+      animation-delay: 5s;
+    }
 
-@keyframes fadeText {
-  0% {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
+    .scroll-2 {
+      animation: showHint2 1.2s infinite steps(2, end);
+      animation-delay: 5s;
+    }
   }
 }
 
 @keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
   to {
     opacity: 1;
   }
 }
 
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0) rotate(45deg);
+@keyframes fadeOut {
+  from {
+    opacity: 1;
   }
-  50% {
-    transform: translateY(8px) rotate(45deg);
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeText {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInHint {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes showHint1 {
+  0%, 49% {
+    opacity: 1;
+    visibility: visible;
+  }
+  50%, 100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes showHint2 {
+  0%, 49% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  50%, 100% {
+    opacity: 1;
+    visibility: visible;
   }
 }
