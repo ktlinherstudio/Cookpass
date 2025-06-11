@@ -1,3 +1,4 @@
+@use './variables' as *;
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -10,12 +11,10 @@ header, main, footer {
 
 header {
   padding: 20px 0;
-  background-color: $color-bg1;
 }
 
 footer {
   padding: 40px 0;
-  background-color: $color-bg2;
 }
 
 .flex-between {
