@@ -20,7 +20,7 @@ export default function Header() {
   return (
     <header className={`main-header ${show ? 'scrolled' : ''}`}>
       <div className={`logo-area ${show ? 'show' : ''}`}>
-        <img src="/images/Icons/nav-logo.svg" alt="logo" className="logo" />
+        <img src="./images/Icons/nav-logo.svg" alt="logo" className="logo" />
       </div>
       <div className="icon-area">
         {/* <img src={`${import.meta.env.BASE_URL}images/Icons/nav-home-default.svg`} alt="home" /> */}
