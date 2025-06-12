@@ -18,16 +18,16 @@ export default function Header() {
   }, [isHome]);
 
   return (
-    <header className={`main-header ${show ? 'show' : ''}`}>
-      <div className="logo-area">
-        <img src={`${import.meta.env.BASE_URL}images/Icons/logo1.svg`} alt="logo" className="logo" />
-        <span className="title">自煮旅圖</span>
+    <header className={`main-header ${show ? 'scrolled' : ''}`}>
+      <div className={`logo-area ${show ? 'show' : ''}`}>
+        <img src="/images/Icons/nav-logo.svg" alt="logo" className="logo" />
       </div>
       <div className="icon-area">
-        <img src={`${import.meta.env.BASE_URL}images/Icons/icon-search.svg`} alt="search" />
-        <img src={`${import.meta.env.BASE_URL}images/Icons/icon-user.svg`} alt="user" />
-        <img src={`${import.meta.env.BASE_URL}images/Icons/icon-bookmark.svg`} alt="bookmark" />
-        <img src={`${import.meta.env.BASE_URL}images/Icons/icon-map.svg`} alt="map" />
+        {/* <img src={`${import.meta.env.BASE_URL}images/Icons/nav-home-default.svg`} alt="home" /> */}
+        <img src={`${import.meta.env.BASE_URL}images/Icons/nav-search-default.svg`} alt="search" />
+        <img src={`${import.meta.env.BASE_URL}images/Icons/nav-member-default.svg`} alt="member" />
+        <img src={`${import.meta.env.BASE_URL}images/Icons/nav-bookmark-default.svg`} alt="bookmark" />
+        <img src={`${import.meta.env.BASE_URL}images/Icons/nav-mymap-default.svg`} alt="map" />
       </div>
     </header>
   );
